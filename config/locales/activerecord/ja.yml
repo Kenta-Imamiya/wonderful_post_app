@@ -1,0 +1,16 @@
+ja:
+ activerecord:
+    models:
+      article: "投稿"
+      user: 'ユーザー'
+      board: '掲示板'
+    attributes:
+      article:
+        title: "タイトル"
+        content: "コンテンツ"
+      user:
+        email: 'メールアドレス'
+        password: 'パスワード'
+        password_confirmation: 'パスワード確認'
+        last_name: '姓'
+        first_name: '名'
