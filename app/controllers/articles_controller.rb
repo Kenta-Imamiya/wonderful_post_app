@@ -18,31 +18,25 @@ class ArticlesController < ApplicationController
 
 
   def create
-    @article = Article.new(article_params)
-
-    respond_to do |format|
-      if @article.save
-        format.html { redirect_to article_url(@article), notice: "article was successfully created." }
-        format.json { render :show, status: :created, location: @article }
-      else
-        format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @article.errors, status: :unprocessable_entity }
-      end
+    @article = current_user.articles.new(article_params)
+    if @article.save
+      redirect_to @article, notice: "#{t('activerecord.models.article')}を作成しました。"
+    else
+      render :new, status: :unprocessable_entity
     end
-
   end
 
   def update
-    @article.update!(article_params)
-
-    render :show
+    if @article.update(article_params)
+      redirect_to @article,notice: "#{t('activerecord.models.article')}を編集しました。"
+    else
+      render :edit, status: :unprocessable_entity
+    end
   end
 
   def destroy
-    @article.destroy!
-    redirect_to articles_url, notice: "article was successfully destroyed."
-
-    # render :show
+    @article.destroy
+    redirect_to articles_url, notice: "#{t('activerecord.models.article')}を削除しました。"
   end
 
 

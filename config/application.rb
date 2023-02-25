@@ -47,7 +47,7 @@ module WonderfulPostApp
     # 複数のロケールファイルが読み込まれるようpathを通す
     config.i18n.load_path += Dir[Rails.root.join('config', 'locales', '**', '*.{rb,yml}').to_s]
 
-    config.time_zone = 'Tokyo'
+    config.time_zone = "Asia/Tokyo"
     config.active_record.default_timezone = :local
 
   end
