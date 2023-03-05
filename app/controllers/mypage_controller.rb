@@ -1,14 +1,16 @@
-class ArticlesController < ApplicationController
+class MypageController < ApplicationController
   ActiveRecord::Base.connection.execute("SELECT setval('articles_id_seq', coalesce((SELECT MAX(id)+1 FROM articles), 1), false)")
-  before_action :authenticate_user!, only:[:index, :show]
-  before_action :set_article, only:[:edit, :update, :destroy]
+  before_action :set_article, only: [:edit, :update, :destroy]
 
   def index
-    @articles = Article.all
+    user = current_user
+    @articles = user.articles
   end
 
   def show
-    @article = Article.find(params[:id])
+    user = current_user
+    @articles = user.articles
+
   end
 
   def new
@@ -50,4 +52,4 @@ class ArticlesController < ApplicationController
     def set_article
       @article = current_user.articles.find(params[:id])
     end
-end
+  end
