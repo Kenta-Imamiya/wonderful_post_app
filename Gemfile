@@ -53,3 +53,6 @@ gem 'devise'
 
 # deviseの日本語化
 gem 'devise-i18n'
+
+# ページネーション作成
+gem 'kaminari'

@@ -9,7 +9,8 @@ class MypageController < ApplicationController
 
   def show
     user = current_user
-    @articles = user.articles
+    @articles = user.articles.search(params[:search]).page(params[:page]).per(10)
+    # @articles = user.articles.page(params[:page]).per(10)
 
   end
 

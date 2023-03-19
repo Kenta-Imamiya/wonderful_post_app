@@ -4,7 +4,9 @@ class ArticlesController < ApplicationController
   before_action :set_article, only:[:edit, :update, :destroy]
 
   def index
-    @articles = Article.all
+    @articles = Article.search(params[:search]).page(params[:page]).per(10)
+    @article.tags = Tag.all
+    # @articles = Article.all.page(params[:page]).per(10)
   end
 
   def show
@@ -12,6 +14,7 @@ class ArticlesController < ApplicationController
   end
 
   def new
+    @article = Article.new
   end
 
   def edit
@@ -41,10 +44,9 @@ class ArticlesController < ApplicationController
   end
 
 
-
   private
     def article_params
-      params.require(:article).permit(:title,:content)
+      params.require(:article).permit(:title,:content, tag_ids: [])
     end
 
     def set_article
