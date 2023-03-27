@@ -7,15 +7,9 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 3.times do |n|
-  User.find_or_create_by(
+  User.create(
     email: "user00#{n + 1}@test.com",
-    encrypted_password: "test1234"
-  )
-end
-
-3.times do |n|
-  Tag.find_or_create_by(
-    name: "テストタグ#{n + 1}"
+    password: "test1234"
   )
 end
 
@@ -42,6 +36,13 @@ end
     user_id: 3
   )
 end
+
+3.times do |n|
+  Tag.find_or_create_by(
+    name: "テストタグ#{n + 1}"
+  )
+end
+
 
 article1 = Article.where(id: 1..50)
 article1.ids.sort.each do |article_id|

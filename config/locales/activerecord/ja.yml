@@ -20,3 +20,4 @@ ja:
     errors:
       messages:
         blank: "が入力されていません。"
+        record_invalid: "バリデーションに失敗しました: %{errors}"

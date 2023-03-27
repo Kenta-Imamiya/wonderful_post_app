@@ -5,7 +5,7 @@ class ArticlesController < ApplicationController
 
   def index
     @articles = Article.search(params[:search]).page(params[:page]).per(10)
-    @article.tags = Tag.all
+    # @article.tags = Tag.all
     # @articles = Article.all.page(params[:page]).per(10)
   end
 
