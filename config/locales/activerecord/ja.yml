@@ -4,10 +4,13 @@ ja:
       article: "記事"
       user: 'ユーザー'
       board: '掲示板'
+      tag: 'タグ'
     attributes:
       article:
         title: "タイトル"
         content: "本文"
+      tag:
+        name: "タグ"
       user:
         email: 'メールアドレス'
         password: 'パスワード'
@@ -17,3 +20,4 @@ ja:
     errors:
       messages:
         blank: "が入力されていません。"
+        record_invalid: "バリデーションに失敗しました: %{errors}"

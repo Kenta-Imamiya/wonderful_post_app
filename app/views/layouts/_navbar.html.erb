@@ -1,11 +1,12 @@
 <nav class="navbar navbar-expand-sm navbar-light bg-light">
   <div class="container-fluid">
-    <%= link_to 'HOME', articles_path, class: "navbar-brand" %>
+    <%= link_to 'ホーム', articles_path, class: "navbar-brand" %>
 
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav">
         <% if user_signed_in? %>
           <li class="nav-item">
+            <li><%= link_to 'マイページ', mypage_path, class: "nav-link active" %>
             <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "nav-link active" %></li>
           </li>
         <% else %>
