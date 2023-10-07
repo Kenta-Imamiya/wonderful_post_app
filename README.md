@@ -4,15 +4,13 @@
 
 記事投稿アプリです。
 
-* Ruby version
-   3.1.3
+* Ruby version : 3.1.3
 
 * System dependencies
 
 * Configuration
 
-* Database creation
-   PostgreSQL
+* Database creation : PostgreSQL
 
 * Database initialization
 
