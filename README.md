@@ -1,23 +1,12 @@
 # README
 
-## wonderful post app
+## アプリケーション名
+### wonderful post app
 
-記事投稿アプリです。
+## アプリケーション概要
+### ワンダフルコードの実践課題で作成した記事投稿アプリです。
 
+## 動作環境
 * Ruby version : 3.1.3
 
-* System dependencies
-
-* Configuration
-
-* Database creation : PostgreSQL
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* Rails version : 6.1.7.1
