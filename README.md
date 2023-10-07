@@ -1,6 +1,6 @@
 # README
 
-##wonderful post app
+##　wonderful post app
 
 記事投稿アプリです。
 
