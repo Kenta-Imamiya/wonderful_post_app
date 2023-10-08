@@ -1,7 +1,4 @@
-# README
-
-
-### ■ アプリケーション名
+## ■ アプリケーション名
 wonderful post app
 
 
